@@ -35,7 +35,7 @@ ECHO Creating Database dspdb
 mysqladmin -h localhost -u root -pleelee123 CREATE dspdb
 
 ECHO Loading dspdb tables into the database
-cd E:\darkstar\sql
+cd E:\darkstarnew\darkstar\sql
 FOR %%X IN (*.sql) DO ECHO Importing %%X & "C:\Program Files\MySQL\MySQL Server 5.6\bin\mysql" dspdb -h localhost -u root -pleelee123 < %%X
 
 ECHO Finished!

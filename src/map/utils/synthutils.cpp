@@ -45,7 +45,7 @@
 #include "../vana_time.h"
 #include "zoneutils.h"
 
-//#define _DSP_SYNTH_DEBUG_MESSAGES_ // включаем отладочные сообщения
+#define _DSP_SYNTH_DEBUG_MESSAGES_ // включаем отладочные сообщения
 
 enum SYNTHESIS_ELEMENT
 {

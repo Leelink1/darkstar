@@ -30,7 +30,7 @@ function onTrigger(player,npc)
 		else
 			player:startEvent(0x0ca)
 		end
-	elseif (player:getCurrentMission(COP) > THE_MOTHERCRYSTALS or player:hasCompletedMission(COP,THE_LAST_VERSE) or (player:getCurrentMission(COP) == BELOW_THE_ARKS and player:getVar("PromathiaStatus") > 1)) then
+	elseif (player:getCurrentMission(COP) > BELOW_THE_ARKS or player:hasCompletedMission(COP,THE_LAST_VERSE) or (player:getCurrentMission(COP) == BELOW_THE_ARKS and player:getVar("PromathiaStatus") > 1)) then
 		player:startEvent(0x0ca); -- normal cs (third promyvion and each entrance after having that promyvion visited or mission completed)
 	else
 		player:messageSpecial(TELEPOINT_HAS_BEEN_SHATTERED);

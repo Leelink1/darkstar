@@ -8,9 +8,9 @@
 --  Notes: Only used by notorious monsters.
 ---------------------------------------------
 
-require("scripts/globals/settings");
-require("scripts/globals/status");
-require("scripts/globals/monstertpmoves");
+require("/scripts/globals/settings");
+require("/scripts/globals/status");
+require("/scripts/globals/monstertpmoves");
 
 ---------------------------------------------
 
@@ -19,6 +19,10 @@ function onMobSkillCheck(target,mob,skill)
 end;
 
 function onMobWeaponSkill(target, mob, skill)
+	if(mob:getID() == 17027474) then
+		mob:setLocalVar("reinforce",1);
+	end
+	
 	local power = 25;
 	local duration = 180;
 
@@ -26,4 +30,7 @@ function onMobWeaponSkill(target, mob, skill)
 
     skill:setMsg(MobBuffMove(mob, typeEffect, power, 3, duration));
 	return typeEffect;
+	
+	
+	
 end;

@@ -22,7 +22,7 @@ end;
 function onMobWeaponSkill(target, mob, skill)
 
    -- addEx to pervent dispel
-   mob:addStatusEffectEx(EFFECT_MAGIC_SHIELD,0,1,0,45)
+   mob:addStatusEffectEx(EFFECT_MAGIC_SHIELD,0,0,0,45)
    skill:setMsg(MSG_BUFF)
    return EFFECT_MAGIC_SHIELD;
 

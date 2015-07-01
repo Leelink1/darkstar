@@ -47,12 +47,12 @@ end;
 
 function onEffectGain(target,effect)
 	local power = effect:getPower();
-	if (power == 1 or power == 4 or power == 5) then
-		target:addMod(MOD_HP, 50);
-		target:addMod(MOD_MP, 50);
-		target:addMod(MOD_AGI, -3);
-		target:addMod(MOD_CHR, 14);
-	end
+--	if (power == 1 or power == 4 or power == 5) then
+--		target:addMod(MOD_HP, 50);
+--		target:addMod(MOD_MP, 50);
+--		target:addMod(MOD_AGI, -3);
+--		target:addMod(MOD_CHR, 14);
+--	end
 	if (power == 2 or power == 4) then
 		target:addMod(MOD_DELAY, -90);
 		target:addMod(MOD_ACC, 10);
@@ -71,12 +71,12 @@ end;
 
 function onEffectLose(target,effect)
 	local power = effect:getPower();
-	if (power == 1 or power == 4 or power == 5) then
-		target:delMod(MOD_HP, 50);
-		target:delMod(MOD_MP, 50);
-		target:delMod(MOD_AGI, -3);
-		target:delMod(MOD_CHR, 14);
-	end
+--	if (power == 1 or power == 4 or power == 5) then
+--		target:delMod(MOD_HP, 50);
+--		target:delMod(MOD_MP, 50);
+--		target:delMod(MOD_AGI, -3);
+--		target:delMod(MOD_CHR, 14);
+--	end
 	if (power == 2 or power == 4) then
 		target:delMod(MOD_DELAY, -90);
 		target:delMod(MOD_ACC, 10);

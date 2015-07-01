@@ -9,14 +9,23 @@
 --  Range: 20' radial
 --  Notes: Only used when a cerberus's health is 25% or lower (may not be the case for Orthrus). The burn effect takes off upwards of 20 HP per tick.
 ---------------------------------------------
-require("scripts/globals/settings");
-require("scripts/globals/status");
-require("scripts/globals/monstertpmoves");
+require("/scripts/globals/settings");
+require("/scripts/globals/status");
+require("/scripts/globals/monstertpmoves");
 
 ---------------------------------------------
 function onMobSkillCheck(target,mob,skill)
-	return 0;
-end;
+
+
+ local mobhp = mob:getHPP();
+     if(mobhp < 26)then
+	     return 0;
+		 
+		else 
+	return 1;
+	end
+	
+	end;
 
 function onMobWeaponSkill(target, mob, skill)
 	local typeEffect = EFFECT_BURN;

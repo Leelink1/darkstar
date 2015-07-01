@@ -39,7 +39,8 @@ function onMobFight(mob,target)
 	local X = mob:getXPos();
 	local Y = mob:getYPos();
 	local Z = mob:getZPos();
-local lifepourcent= ((mob:getHP()/mob:getMaxHP())*100); 
+local lifepourcent= ((mob:getHP()/mob:getMaxHP()*100)); 
+
 local instancetime = target:getSpecialBattlefieldLeftTime(5);
 
 

@@ -16,9 +16,9 @@ function onEffectGain(target,effect)
     -- Possibly handle exp bonus in core instead
 
     if (power == 1) then
-        -- target:addLatent(LATENT_SANCTION_REGEN, subPower, MOD_REGEN, 1);
+       --  target:addLatent(LATENT_SANCTION_REGEN, subPower, MOD_REGEN, 1);
     elseif (power == 2) then
-        -- target:addLatent(LATENT_SANCTION_REGEN, subPower, MOD_REGEN, 1);
+      --   target:addLatent(LATENT_SANCTION_REGEN, subPower, MOD_REGEN, 1);
     elseif (power == 3) then
         -- target:addMod(MOD_FOOD_DURATION), ???);
         -- food duration not implemented.

@@ -59,8 +59,8 @@ end;
 
 -- Provides a power for using a equipment modifiers with bunch of wild pamamas or pamamas
 function PamamasEquip(player)
-   local head = target:getEquipID(SLOT_HEAD);
-   local main = target:getEquipID(SLOT_MAIN);
+   local head = player:getEquipID(SLOT_HEAD);
+   local main = player:getEquipID(SLOT_MAIN);
    local power = 0;
    
    if (head == 13870) then -- Opo-Opo Crown

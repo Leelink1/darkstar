@@ -16,8 +16,8 @@ require("scripts/globals/keyitems");
 function onTrade(player,npc,trade)
    local DMRepeat = player:getQuestStatus(OUTLANDS,DIVINE_MIGHT_REPEAT);
    local Hour = VanadielHour();
-
-   if (player:getWeather() == 0 and IsMoonFull() == true and Hour >= 0 and Hour <= 2) then
+print(player:getWeather());
+   if (player:getWeather() <= 1 and Hour >= 0 and Hour <= 7) then
       if ((player:getQuestStatus(OUTLANDS,DIVINE_MIGHT) == QUEST_ACCEPTED or DMRepeat == QUEST_ACCEPTED) and
          trade:hasItemQty(1408,1) and trade:hasItemQty(917,1) and trade:getItemCount() == 2) then
             player:startEvent(7,917,1408); -- Ark Pentasphere Trade
@@ -33,6 +33,16 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
+    local CurrentMission = player:getCurrentMission(WINDURST);
+	local MissionStatus = player:getVar("MissionStatus");
+
+	if(CurrentMission == VAIN and MissionStatus >= 1) then
+		player:startEvent(2);
+	elseif(player:getCurrentMission(WINDURST) == MOON_READING and player:getVar("WINDURST92") == 1 and player:hasKeyItem(ANCIENT_VERSE_OF_ROMAEVE) == false) then
+		player:startEvent(0x0004);
+    else
+		player:messageSpecial(NOTHING_OUT_OF_ORDINARY);
+	end
 end;
 
 -----------------------------------
@@ -47,7 +57,7 @@ end;
 -----------------------------------
 
 function onEventFinish(player,csid,option)
-   if (csid == 7) then
+    if (csid == 7) then
       if (player:getFreeSlotsCount() == 0) then 
          player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,1550);
       else 
@@ -55,9 +65,14 @@ function onEventFinish(player,csid,option)
          player:messageSpecial(ITEM_OBTAINED,1550);
          player:tradeComplete();
       end
-   elseif (csid == 8) then
+    elseif (csid == 8) then
       player:tradeComplete();
       player:addKeyItem(MOONLIGHT_ORE);
       player:messageSpecial(KEYITEM_OBTAINED,MOONLIGHT_ORE);
-   end
+	elseif (csid == 4 and player:getCurrentMission(WINDURST) == VAIN) then
+	  player:setVar("MissionStatus",2);
+	elseif (csid == 0x0004 and player:getCurrentMission(WINDURST) == MOON_READING) then
+		player:addKeyItem(ANCIENT_VERSE_OF_ROMAEVE);
+		player:messageSpecial(KEYITEM_OBTAINED,ANCIENT_VERSE_OF_ROMAEVE);
+    end
 end;

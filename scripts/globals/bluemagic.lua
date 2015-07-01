@@ -391,6 +391,26 @@ function getBlueEffectDuration(caster,resist,effect)
 		duration = math.random(20,24) + resist * 9; -- 30-60
 	elseif(effect == EFFECT_PARALYSIS) then
 		duration = math.random(50,60) + resist * 15; --60- 120
+	elseif(effect == EFFECT_SLOW) then
+		duration = math.random(50,60) + resist * 15; --60- 120 -- Copied Para
+	elseif(effect == EFFECT_BLINDNESS) then
+		duration = math.random(50,60) + resist * 15; --60- 120 -- Copied Para
+	elseif(effect == EFFECT_ACCURACY_DOWN) then
+		duration = math.random(10,20) + resist * 5; -- Made up the value. Feel free to change
+	elseif(effect == EFFECT_POISON) then
+		duration = math.random(20,24) + resist * 9; -- 30-60 - Copied Weight
+	elseif(effect == EFFECT_SILENCE) then
+		duration = math.random(50,60) + resist * 15; --60- 120 -- Copied Para
+	elseif(effect == EFFECT_ATTACK_DOWN) then
+		duration = math.random(10,20) + resist * 5; -- Made up the value. Feel free to change
+	elseif(effect == EFFECT_DEFENSE_DOWN) then
+		duration = math.random(10,20) + resist * 5; -- Made up the value. Feel free to change
+	elseif(effect == EFFECT_MAGIC_DEF_DOWN) then
+		duration = math.random(10,20) + resist * 5; -- Made up the value. Feel free to change
+	elseif(effect == EFFECT_SLEEP_I) then
+		duration = math.random(10,20) + resist * 5; -- Made up the value. Feel free to change
+	elseif(effect == EFFECT_SLEEP_II) then
+		duration = math.random(30,40) + resist * 5; -- Made up the value. Feel free to change
 	end
 	printf("Duration of stun is %i",duration);
 	return duration;
